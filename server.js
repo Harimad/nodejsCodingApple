@@ -9,8 +9,8 @@ app.get('/pet', function (요청, 응답) {
   응답.send('PET SITE')
 })
 
-app.get('/beauty', function (req, res) {
-  res.send('BEAURY SITE')
+app.get('/write', function (req, res) {
+  res.sendFile(__dirname + '/write.html')
 })
 
 app.get('/', function (req, res) {
