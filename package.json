@@ -1,0 +1,22 @@
+{
+  "name": "nodejscodingapple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harimad/nodejsCodingApple.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harimad/nodejsCodingApple/issues"
+  },
+  "homepage": "https://github.com/Harimad/nodejsCodingApple#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
