@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 app.use(express.urlencoded({ extended: true }))
+app.set('view engine', 'ejs')
 
 var db
 const MongoClient = require('mongodb').MongoClient
@@ -34,4 +35,8 @@ app.post('/add', function (요청, 응답) {
       console.log('저장완료')
     }
   )
+})
+
+app.get('/list', function (요청, 응답) {
+  응답.render('list.ejs')
 })
