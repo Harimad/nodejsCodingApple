@@ -39,16 +39,17 @@
 			</li>
 			<%}%>
 	</ul>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<script>
 		$('.delete').click(function (e) {
+			var 지금누른거 = $(this);
 			$.ajax({
 				method: 'DELETE',
 				url: '/delete',
 				data: { _id: e.target.dataset.id }
 			}).done(function (결과) {
+				지금누른거.parent('li').fadeOut();
 			}).fail(function (에러) {
 			})
 		})
