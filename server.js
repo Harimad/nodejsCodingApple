@@ -65,6 +65,9 @@ app.get('/list', function (요청, 응답) {
 })
 
 app.delete('/delete', function (요청, 응답) {
-  //DB에서 글 삭제 해주쇼
+  요청.body._id = parseInt(요청.body._id)
+  db.collection('post').deleteOne(요청.body, function (에러, 결과) {
+    console.log('삭제완료')
+  })
   응답.send('삭제완료')
 })

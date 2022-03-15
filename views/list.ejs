@@ -35,21 +35,22 @@
 				<p> 할일 마감날짜:
 					<%= posts[i].date %>
 				</p>
-				<button>삭제</button>
+				<button class="delete" data-id="<%= posts[i]._id %>">삭제</button>
 			</li>
 			<%}%>
 	</ul>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 	<script>
-		$.ajax({
-			method: 'DELETE',
-			url: '/delete',
-			data: '1번게시물'
-		}).done(function (결과) {
-
-		}).fail(function (에러) {
-
+		$('.delete').click(function (e) {
+			$.ajax({
+				method: 'DELETE',
+				url: '/delete',
+				data: { _id: e.target.dataset.id }
+			}).done(function (결과) {
+			}).fail(function (에러) {
+			})
 		})
 	</script>
 
