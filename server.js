@@ -63,3 +63,8 @@ app.get('/list', function (요청, 응답) {
       응답.render('list.ejs', { posts: 결과 })
     })
 })
+
+app.delete('/delete', function (요청, 응답) {
+  //DB에서 글 삭제 해주쇼
+  응답.send('삭제완료')
+})
