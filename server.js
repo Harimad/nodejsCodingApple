@@ -39,8 +39,16 @@ app.post('/add', function (요청, 응답) {
           date: 요청.body.date,
         },
         function (에러, 결과) {
-          console.log('저장완료')
-          응답.send('전송완료')
+          db.collection('counter').updateOne(
+            { name: '게시물갯수' },
+            { $inc: { totalPost: 1 } },
+            function (에러, 결과) {
+              if (에러) {
+                return console.log(에러)
+              }
+              응답.send('전송완료')
+            }
+          )
         }
       )
     }
